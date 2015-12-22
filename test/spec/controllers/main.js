@@ -17,7 +17,37 @@ describe('Controller: MainCtrl', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(MainCtrl.awesomeThings.length).toBe(3);
+  it('last input 356', function () {
+
+    scope.recordNumber("3");
+    scope.recordNumber("5");
+    scope.recordNumber("6");
+    expect(scope.lastInput).toBe("356");
+  });
+
+  it('last input 3+56', function () {
+
+    scope.recordNumber("3");
+    scope.recordOperator("+");
+    scope.recordNumber("5");
+    scope.recordNumber("6");
+    expect(scope.lastInput).toBe("56");
+  });
+
+  it('last input 096', function () {
+
+    scope.recordNumber("0");
+    scope.recordNumber("9");
+    scope.recordNumber("6");
+    expect(scope.lastInput).toBe("96");
+  });
+
+  it('last input 0.55', function () {
+
+    scope.recordNumber("0");
+    scope.recordNumber(".");
+    scope.recordNumber("5");
+    scope.recordNumber("5");
+    expect(scope.lastInput).toBe("0.55");
   });
 });

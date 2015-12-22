@@ -1,22 +1,22 @@
 <div class="row">
   <div class="col-sm-offset-3 col-sm-6">
     <div id="calculator" class="text-center center-block">
-      <input type="text" class="form-control" ng-model='expressionState' disabled>
-      <button class="btn btn-default" ng-click='record("1")'>1</button>
-      <button class="btn btn-default" ng-click='record("2")'>2</button>
-      <button class="btn btn-default" ng-click='record("3")'>3</button>
-      <button class="btn btn-default" ng-click='record("4")'>4</button>
-      <button class="btn btn-default" ng-click='record("5")'>5</button>
-      <button class="btn btn-default" ng-click='record("6")'>6</button>
-      <button class="btn btn-default" ng-click='record("7")'>7</button>
-      <button class="btn btn-default" ng-click='record("8")'>8</button>
-      <button class="btn btn-default" ng-click='record("9")'>9</button>
-      <button class="btn btn-default" ng-click='record(".")'>.</button>
-      <button class="btn btn-default" ng-click='record("0")'>0</button>
-      <button class="btn btn-warning" ng-click='record("+")'>+</button>
-      <button class="btn btn-warning" ng-click='record("-")'>-</button>
-      <button class="btn btn-warning" ng-click='record("*")'>x</button>
-      <button class="btn btn-warning" ng-click='record("/")'>/</button>
+      <input type="text" class="form-control" ng-model='lastInput' disabled>
+      <button class="btn btn-default" ng-click='recordNumber("1")'>1</button>
+      <button class="btn btn-default" ng-click='recordNumber("2")'>2</button>
+      <button class="btn btn-default" ng-click='recordNumber("3")'>3</button>
+      <button class="btn btn-default" ng-click='recordNumber("4")'>4</button>
+      <button class="btn btn-default" ng-click='recordNumber("5")'>5</button>
+      <button class="btn btn-default" ng-click='recordNumber("6")'>6</button>
+      <button class="btn btn-default" ng-click='recordNumber("7")'>7</button>
+      <button class="btn btn-default" ng-click='recordNumber("8")'>8</button>
+      <button class="btn btn-default" ng-click='recordNumber("9")'>9</button>
+      <button class="btn btn-default" ng-click='recordNumber(".")'>.</button>
+      <button class="btn btn-default" ng-click='recordNumber("0")'>0</button>
+      <button class="btn btn-warning" ng-click='recordOperator("+")'>+</button>
+      <button class="btn btn-warning" ng-click='recordOperator("-")'>-</button>
+      <button class="btn btn-warning" ng-click='recordOperator("*")'>x</button>
+      <button class="btn btn-warning" ng-click='recordOperator("/")'>/</button>
       <button class="btn btn-success" ng-click='result()'>=</button>
       <button class="btn btn-danger" ng-click='clear()'>C</button>
     </div>
