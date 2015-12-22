@@ -1,3 +1,7 @@
+body {
+  background-color: #64A084;
+}
+
 .container {
   margin-top: 40px;
 }
@@ -5,7 +9,7 @@
 #calculator {
   background-color: #826262;
   padding: 20px;
-  width: 430px;
+  width: 385px;
   font-family: 'Montserrat', sans-serif;
   -webkit-box-shadow: 6px 6px 14px 0px rgba(59, 0, 1, 1);
   -moz-box-shadow: 6px 6px 14px 0px rgba(59, 0, 1, 1);
@@ -25,10 +29,11 @@ input {
 }
 
 .btn {
-  width: 26.3%;
-  margin: 0 11px 15px;
+  width: 28.3%;
+  margin: 0 6px 15px;
   font-size: 30px;
   line-height: 2.2;
+  padding: 0 12px;
 }
 
 .btn:focus, .btn:active {
