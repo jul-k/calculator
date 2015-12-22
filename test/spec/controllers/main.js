@@ -50,4 +50,33 @@ describe('Controller: MainCtrl', function () {
     scope.recordNumber("5");
     expect(scope.lastInput).toBe("0.55");
   });
+
+  it('last input 09', function () {
+
+    scope.recordNumber("0");
+    scope.recordNumber("9");
+    expect(scope.lastInput).toBe("9");
+  });
+
+  it('last input 00', function () {
+
+    scope.recordNumber("0");
+    scope.recordNumber("0");
+    expect(scope.lastInput).toBe("0");
+  });
+
+  it('last input 3+8=', function () {
+
+    scope.recordNumber("3");
+    scope.recordOperator("+");
+    scope.recordNumber("8");
+    scope.result();
+    expect(scope.lastInput).toBe("11");
+  });
+
+  it('last input .', function () {
+
+    scope.recordNumber(".");
+    expect(scope.lastInput).toBe("0.");
+  });
 });

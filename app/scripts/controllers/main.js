@@ -13,7 +13,6 @@ var app = angular.module('calculatorApp');
 app.controller('MainCtrl', ['$scope', function ($scope) {
     $scope.expressionState = "";
     $scope.lastInput = "";
-    $scope.calculated = false;
     $scope.inputReset = false;
 
     $scope.recordOperator = function (operator) {
@@ -32,26 +31,32 @@ app.controller('MainCtrl', ['$scope', function ($scope) {
             $scope.lastInput = $scope.lastInput.substring(1);
         }
 
+        if ($scope.lastInput==="0" && number !== ".") {
+            $scope.lastInput = number;
+            $scope.record(number);
+            return
+        }
+
+        if ($scope.lastInput ==="" && number === ".") {
+            $scope.lastInput = "0";
+        }
+
         $scope.lastInput += number;
         $scope.record(number);
     }
 
     $scope.record = function(a) {
-        if($scope.calculated===true) {
-            $scope.expressionState = a;
-            $scope.calculated = false;
-        } else {
-            $scope.expressionState += a;
-        }
+        $scope.expressionState += a;
     }
 
     $scope.result = function() {
-        $scope.expressionState = eval($scope.expressionState);
-        $scope.calculated = true;
+        $scope.lastInput = "" + eval($scope.expressionState);
+        $scope.expressionState = "";
+        $scope.inputReset = true;
     }
 
     $scope.clear = function() {
         $scope.expressionState = "";
-        $scope.calculated = false;
+        $scope.lastInput = "";
     }
 }]);
